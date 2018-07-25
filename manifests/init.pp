@@ -37,5 +37,10 @@
 #
 class lnet {
 
+  service { 'lnet':
+    name    => 'lnet',
+    ensure  => running,
+    enable  => true,
+  }
 
 }
