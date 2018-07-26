@@ -37,10 +37,19 @@
 #
 class lnet {
 
+  file { '/etc/lnet.conf':
+    content => template('lnet/lnet.conf.erb'),
+    owner   => 'root',
+    group   => 'root',
+    backup  => 'false',
+  }
+
   service { 'lnet':
-    name    => 'lnet',
-    ensure  => running,
-    enable  => true,
+    name      => 'lnet',
+    ensure    => running,
+    enable    => true,
+    subscribe => File['/etc/lnet.conf'],
+    require   => File['/etc/lnet.conf'],
   }
 
 }
