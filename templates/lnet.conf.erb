@@ -1,31 +1,10 @@
 net:
-    - net type: lo
-      local NI(s):
-        - nid: 0@lo
-          status: up
-          statistics:
-              send_count: 0
-              recv_count: 0
-              drop_count: 0
-          tunables:
-              peer_timeout: 0
-              peer_credits: 0
-              peer_buffer_credits: 0
-              credits: 0
-          lnd tunables:
-          tcp bonding: 0
-          dev cpt: 0
-          CPT: "[0,1]"
     - net type: tcp
       local NI(s):
         - nid: 10.31.130.220@tcp
           status: up
           interfaces:
               0: em1
-          statistics:
-              send_count: 0
-              recv_count: 0
-              drop_count: 0
           tunables:
               peer_timeout: 180
               peer_credits: 8
@@ -41,10 +20,6 @@ net:
           status: up
           interfaces:
               0: em1
-          statistics:
-              send_count: 0
-              recv_count: 0
-              drop_count: 0
           tunables:
               peer_timeout: 180
               peer_credits: 8
@@ -60,10 +35,6 @@ net:
           status: up
           interfaces:
               0: em1
-          statistics:
-              send_count: 0
-              recv_count: 0
-              drop_count: 0
           tunables:
               peer_timeout: 180
               peer_credits: 8
@@ -79,10 +50,6 @@ net:
           status: up
           interfaces:
               0: ib0
-          statistics:
-              send_count: 0
-              recv_count: 0
-              drop_count: 0
           tunables:
               peer_timeout: 180
               peer_credits: 8
@@ -106,10 +73,6 @@ net:
           status: up
           interfaces:
               0: ib0
-          statistics:
-              send_count: 0
-              recv_count: 0
-              drop_count: 0
           tunables:
               peer_timeout: 180
               peer_credits: 8
@@ -133,10 +96,6 @@ net:
           status: up
           interfaces:
               0: ib0
-          statistics:
-              send_count: 0
-              recv_count: 0
-              drop_count: 0
           tunables:
               peer_timeout: 180
               peer_credits: 8
