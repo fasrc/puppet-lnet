@@ -35,7 +35,11 @@
 #
 # Copyright 2018 Your name here, unless otherwise noted.
 #
-class lnet {
+class lnet (
+  $net    = $lnet::net,
+) {
+
+  validate_hash($net)
 
   file { '/etc/lnet.conf':
     content => template('lnet/lnet.conf.erb'),

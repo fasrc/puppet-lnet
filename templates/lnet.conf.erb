@@ -1,39 +1,11 @@
 net:
-    - net type: tcp
+<% @net.each do |net| -%>
+    - net type: <%= net %>
       local NI(s):
-        - nid: 10.31.130.220@tcp
-          status: up
+        - nid: <%= ip %>@<%= net %>
+          status: <%= status %>
           interfaces:
-              0: em1
-    - net type: tcp1
-      local NI(s):
-        - nid: 10.31.130.220@tcp1
-          status: up
-          interfaces:
-              0: em1
-    - net type: tcp2
-      local NI(s):
-        - nid: 10.31.130.220@tcp2
-          status: up
-          interfaces:
-              0: em1
-    - net type: o2ib
-      local NI(s):
-        - nid: 10.31.160.20@o2ib
-          status: up
-          interfaces:
-              0: ib0
-    - net type: o2ib1
-      local NI(s):
-        - nid: 10.31.160.20@o2ib1
-          status: up
-          interfaces:
-              0: ib0
-    - net type: o2ib2
-      local NI(s):
-        - nid: 10.31.160.20@o2ib2
-          status: up
-          interfaces:
-              0: ib0
+              0: <%= interfaces %>
+<% end %>
 
 
