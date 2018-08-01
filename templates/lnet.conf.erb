@@ -2,10 +2,10 @@ net:
 <% @net.each do |net| -%>
     - net type: <%= net %>
       local NI(s):
-        - nid: <%= ip %>@<%= net %>
-          status: <%= status %>
+        - nid: <%= net['ip'] %>@<%= net %>
+          status: <%= net['status'] %>
           interfaces:
-              0: <%= interfaces %>
+              0: <%= net['interfaces'] %>
 <% end %>
 
 
