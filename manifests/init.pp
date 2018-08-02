@@ -36,7 +36,7 @@
 # Copyright 2018 Your name here, unless otherwise noted.
 #
 class lnet (
-  $net    = $lnet::net,
+  $net    = hiera($lnet::net),
 ) {
 
   validate_hash($net)
