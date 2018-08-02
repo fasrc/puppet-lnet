@@ -35,7 +35,25 @@
 #
 # Copyright 2018 Your name here, unless otherwise noted.
 #
-class lnet {
+class lnet (
+  $net    = hiera($lnet::net),
+) {
 
+  validate_hash($net)
+
+  file { '/etc/lnet.conf':
+    content => template('lnet/lnet.conf.erb'),
+    owner   => 'root',
+    group   => 'root',
+    backup  => 'false',
+  }
+
+  service { 'lnet':
+    name      => 'lnet',
+    ensure    => running,
+    enable    => true,
+    subscribe => File['/etc/lnet.conf'],
+    require   => File['/etc/lnet.conf'],
+  }
 
 }
