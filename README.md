@@ -50,6 +50,7 @@ Then include your `lnet.conf` specification as per below.
 
 The major piece of usage for this is the has for the `lnet.conf`.  Below is a hiera example:
 
+  ~~~ yaml
   lnet::net:
     tcp:
       ip: 10.0.0.1
@@ -59,11 +60,13 @@ The major piece of usage for this is the has for the `lnet.conf`.  Below is a hi
       ip: 10.0.1.1
       status: up
       interfaces: ib0
+  ~~~
 
 In this each hash entry is the type of the network you want to define.  The IP address is the IP for the router on that network.  Status is whether that network is up or not.  Interfaces is what interface this network is live on.
 
 Once you fill this out puppet will lay down the following `lnet.conf`.
 
+  ~~~ yaml
   net:
       - net type: tcp
         local NI(s):
@@ -77,6 +80,7 @@ Once you fill this out puppet will lay down the following `lnet.conf`.
             status: up
             interfaces:
                 0: ib0
+  ~~~
 
 It will then start the `lnet` service.  Please note that updates to the lnet.conf after the initial deploy may require a reboot of the router to actually implement.
 
