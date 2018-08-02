@@ -1,39 +1,30 @@
 # == Class: lnet
 #
-# Full description of class lnet here.
+# This class manage lnet.
 #
 # === Parameters
 #
-# Document parameters here.
+# lnet::net
+#   Is a hash of values that will be used by the lnet.conf.erb template to
+#   construct the lnet.conf.  Here is a hiera example:
 #
-# [*sample_parameter*]
-#   Explanation of what this parameter affects and what it defaults to.
-#   e.g. "Specify one or more upstream ntp servers as an array."
-#
-# === Variables
-#
-# Here you should define a list of variables that this module would require.
-#
-# [*sample_variable*]
-#   Explanation of how this variable affects the funtion of this class and if
-#   it has a default. e.g. "The parameter enc_ntp_servers must be set by the
-#   External Node Classifier as a comma separated list of hostnames." (Note,
-#   global variables should be avoided in favor of class parameters as
-#   of Puppet 2.6.)
-#
-# === Examples
-#
-#  class { 'lnet':
-#    servers => [ 'pool.ntp.org', 'ntp.local.company.com' ],
-#  }
+#  lnet::net:
+#    tcp:
+#      ip: 10.0.0.1
+#      status: up
+#      interfaces: em1
+#    o2ib:
+#      ip: 10.0.1.1
+#      status: up
+#      interfaces: ib0
 #
 # === Authors
 #
-# Author Name <author@domain.com>
+# Paul Edmon <pedmon@cfa.harvard.edu>
 #
 # === Copyright
 #
-# Copyright 2018 Your name here, unless otherwise noted.
+# Copyright 2018 Paul Edmon.
 #
 class lnet (
   $net    = $lnet::net,
