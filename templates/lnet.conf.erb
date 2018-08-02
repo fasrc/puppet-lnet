@@ -1,11 +1,9 @@
 net:
-<% @net.each do |type| -%>
-    - net type: <%= net['type'] %>
+<% @net.each do |key,hash| -%>
+    - net type: <%= key %>
       local NI(s):
-        - nid: <%= net['type']['ip'] %>@<%= net['type'] %>
-          status: <%= net['type']['status'] %>
+        - nid: <%= hash['ip'] %>@<%= key %>
+          status: <%= hash['status'] %>
           interfaces:
-              0: <%= net['type']['interfaces'] %>
+              0: <%= hash['interfaces'] %>
 <% end %>
-
-
