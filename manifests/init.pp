@@ -27,7 +27,7 @@
 # Copyright 2018 Paul Edmon.
 #
 class lnet (
-  $net    = $lnet::net,
+  $net    = {},
 ) {
 
   validate_hash($net)
