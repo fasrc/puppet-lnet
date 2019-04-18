@@ -15,7 +15,7 @@
 
 ## Overview
 
-This module manages the Lustre LNET service by starting the service itself.  This has been tested for Lustre 2.10.3 and Puppet 3.
+This module manages the Lustre LNET service by starting the service itself.  This has been tested for Lustre 2.10.7 and Puppet 3.
 
 ## Module Description
 
@@ -33,7 +33,7 @@ This module currently is only set up for very basic LNET routing.  This module a
 
 ### Setup Requirements
 
-This module assumes that you have Lustre installed.  This module does not install Lustre, it only manages the LNET service once Luster is installed.
+This module assumes that you have Lustre installed.  This module does not install Lustre, it only manages the LNET service once Lustre is installed.
 
 ### Beginning with lnet
 
@@ -43,7 +43,7 @@ To use simply:
   include ::lnet
   ~~~
 
-Then include your `lnet.conf` specification.
+Then include your `lnet.conf` specification on the node you have installed on.
 
 ## Reference
 
@@ -52,7 +52,7 @@ Classes:
 
 ## Limitations
 
-Tested for Lustre 2.10.3 and Puppet 3
+Tested for Lustre 2.10.7 and Puppet 3
 
 ## Development
 

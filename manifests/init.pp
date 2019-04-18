@@ -12,9 +12,7 @@
 #
 # Copyright 2018 Paul Edmon.
 #
-class lnet (
-  $net    = {},
-) {
+class lnet {
 
   service { 'lnet':
     name      => 'lnet',
